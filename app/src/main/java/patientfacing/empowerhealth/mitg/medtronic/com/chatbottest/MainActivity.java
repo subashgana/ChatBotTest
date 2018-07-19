@@ -264,5 +264,18 @@ public class MainActivity extends AppCompatActivity {
             });
             alertDialog.show();
         }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            progressBar.setVisibility(View.GONE);
+
+
+            webView.getSettings().setSupportZoom(true);
+            webView.getSettings().setBuiltInZoomControls(true);
+            webView.getSettings().setDisplayZoomControls(true);
+            webView.getSettings().setTextZoom(50);
+
+        }
     }
 }
